@@ -84,25 +84,27 @@ Create a RHEL instance from a the latest RHEL8-LVM gold image. (optionally you c
 
      az vm create -n RHEL-BYOS-TEST01 -g TEST --image redhat:rhel-byos:rhel-lvm8:latest --admin-username=azureuser --admin-password="Password123."
      
-Now let's take a look at the VM we just created from the latest RHEL8 LVM gold image:
+Now let's take a look at the VM we just created from the latest RHEL8 LVM gold image with -d (--show-details):
 
-     az vm show -g TEST -n RHEL-BYOS-20220909
+     az vm show -g TEST -n RHEL-BYOS-20220909 -d
      
 Notice a few things
 - licenseType: null
+- publicIps
 
 Let's set the correct license type for this VM instance (RHEL_BYOS):
 
      az vm update -n RHEL-BYOS-20220909 -g TEST --license-type RHEL_BYOS
      
-Login to the new image:
+Login to the VM using the `publicIp` Address:
 
-     ssh <public-ip> -l azureuser
+     ssh $(az vm list -d -g TEST -n RHEL-BYOS-20220909 --query publicIps) -l azureuser
      
-     sudo dnf repolist 😕
-     subscription-manager register 
+setup the VM to consume a subscription and attach to insights
+     sudo dnf repolist # 😕
+     subscription-manager register
      dnf install rhc -y
-     rhc connect 🙂
+     rhc connect # 🙂
      exit
 
 Cleanup (delete) the VM we just created:
