@@ -19,19 +19,19 @@ Enable the azure software repo for your version of RHEL
 
 [RHEL 7]
 
-     `sudo dnf install -y https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
+     sudo dnf install -y https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 [RHEL8]
 
-     `sudo dnf install -y https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm`
+     sudo dnf install -y https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
 
 [RHEL9]
 
-     `sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm`
+     sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm
 
 Install azure-cli software package
 
-     `sudo dnf install -y azure-cli`
+     sudo dnf install -y azure-cli
 
 
 Cloud Access Enrollment Process
@@ -90,7 +90,8 @@ Now let's take a look at the VM we just created from the latest RHEL8 LVM gold i
      
 Notice a few things
 - licenseType: null
-- publicIps
+- publicIps:
+- something-else??
 
 Let's set the correct license type for this VM instance (RHEL_BYOS):
 
@@ -101,6 +102,7 @@ Login to the VM using the `publicIp` Address:
      ssh $(az vm list -d -g TEST -n RHEL-BYOS-20220909 --query publicIps) -l azureuser
      
 setup the VM to consume a subscription and attach to insights
+
      sudo dnf repolist # 😕
      subscription-manager register
      dnf install rhc -y
