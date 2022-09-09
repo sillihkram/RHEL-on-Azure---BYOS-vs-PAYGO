@@ -80,8 +80,9 @@ Now that we have a resource group let's take a look at the RHEL-BYOS images that
 
      az vm image list --all --publisher RedHat --offer "rhel-byos"
      
-Create a RHEL instance from a the latest RHEL8-LVM gold image. 
-     az vm create -n RHEL-BYOS-TEST01 -g TEST --image redhat:rhel-byos:rhel-lvm8:latest --no-wait --admin-username=azureuser --admin-password="Password123."
+Create a RHEL instance from a the latest RHEL8-LVM gold image. (optionally you can add --nowait to return your command quicker, however we want to see the IP information.
+
+     az vm create -n RHEL-BYOS-TEST01 -g TEST --image redhat:rhel-byos:rhel-lvm8:latest --admin-username=azureuser --admin-password="Password123."
      
 Now let's take a look at the VM we just created from the latest RHEL8 LVM gold image:
 
@@ -94,6 +95,16 @@ Let's set the correct license type for this VM instance (RHEL_BYOS):
 
      az vm update -n RHEL-BYOS-20220909 -g TEST --license-type RHEL_BYOS
      
-Cleanup (delete) the VMs we created in this demo:
+Login to the new image:
 
+     ssh <public-ip> -l azureuser
+     
+     sudo dnf repolist 😕
+     subscription-manager register 
+     dnf install rhc -y
+     rhc connect 🙂
+     exit
+
+Cleanup (delete) the VM we just created:
+ 
      az vm delete -g TEST -n RHEL-BYOS-20220909
