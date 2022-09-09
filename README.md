@@ -58,7 +58,7 @@ In order to use gold images in the marketplace you need to enable your red hat e
 
 - Next, click on the 3 dots besides Date Added and click on Activate Gold Image to complete the process.                  
 
-Deploying Images on Azure using azure-cli
+Deploying BYOS gold Images on Azure using `azure-cli`
 ------------
 
 Authenicate to your azure account using the az command (web browser required):
