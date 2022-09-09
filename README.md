@@ -1,4 +1,4 @@
-# RHEL-on-Azure---BYOS-vs-PAYGO
+# RHEL-on-Azure-BYOS-vs-PAYGO
 ========
 
 This is a Demo for deploying VMs to an Azure Resource group. This demo covers deployng images using Red Hat Cloud Access, Where you "Bring Your Own Subscription" (`BYOS`) to your certified cloud serice provider as well we demo deploying PAYGO images from Azure's Marketplace. These images are pre-configured to update from RHUI (Red Hat Update Infrastructure) and are billed by by microsoft by the min. While `PAYGO` will cost more money to run long term, it's a nice option to spin up short lived RHEL instances.
