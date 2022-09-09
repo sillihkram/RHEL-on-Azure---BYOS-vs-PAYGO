@@ -93,3 +93,7 @@ Notice a few things
 Let's set the correct license type for this VM instance (RHEL_BYOS):
 
      az vm update -n RHEL-BYOS-20220909 -g TEST --license-type RHEL_BYOS
+     
+Cleanup (delete) the VMs we created in this demo:
+
+     az vm delete -g TEST -n RHEL-BYOS-20220909
