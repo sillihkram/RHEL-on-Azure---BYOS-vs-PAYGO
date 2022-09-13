@@ -75,7 +75,7 @@ List available resource groups for your acount
 
      az group list
 
-Create a resource group to deploy an instance of RHEL in:
+Create a resource group to deploy an instance of RHEL in east region:
 
      az group create -n TEST -l eastus
      
