@@ -21,11 +21,11 @@ Enable the azure software repo for your version of RHEL
 
      sudo dnf install -y https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
-[RHEL8]
+[RHEL 8]
 
      sudo dnf install -y https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
 
-[RHEL9]
+[RHEL 9]
 
      sudo dnf install -y https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm
 
@@ -37,7 +37,7 @@ Install azure-cli software package
 Cloud Access Enrollment Process
 ------------
 
-In order to use gold images in the marketplace you need to enable your red hat eligible subscriptions for cloud access. This process unlocks RHEL gold images that can be ordered from your CCSP (Certified cloud service provider) marketplace. to enable cloud access follow the instructions below 
+In order to use gold images in the marketplace you need to enable your Red Hat eligible subscriptions for cloud access. This process unlocks RHEL gold images that can be ordered from your CCSP (Certified cloud service provider) marketplace. to enable cloud access follow the instructions below 
 **Disclaimer** for up-to-date instructions please refernce this link as the below instructions are subject to change: https://access.redhat.com/articles/5252771#:~:text=Log%20in%20to%20the%20Red,from%20the%20drop%2Ddown%20menu.
 
 - Log in to the Red Hat Customer Portal: https://access.redhat.com/
