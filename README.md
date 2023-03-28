@@ -81,11 +81,16 @@ Create a resource group to deploy an instance of RHEL in east region:
      
 Now that we have a resource group let's take a look at the RHEL-BYOS images that are available:
 
-     az vm image list --all --publisher RedHat --offer "rhel-byos"
+     az vm image list --all --publisher RedHat --offer "rhel-byos" --output=table
+     
+Before we can use any of these images we have to accept the terms for using the image. You can do this with Azure-CLI:
+
+     az vm image terms accept --urn redhat:rhel-byos:rhel-lvm91-gen2:latest
+     az vm image terms accept --urn redhat:rhel-byos:rhel-lvm86-gen2:latest
      
 Create a RHEL instance from a the latest RHEL8-LVM gold image. (optionally you can add --nowait to return your command quicker, however we want to see the IP information.
 
-     az vm create -n RHEL-BYOS-TEST01 -g TEST --image redhat:rhel-byos:rhel-lvm8:latest --admin-username=azureuser --admin-password="Password123."
+     az vm create -n RHEL-BYOS-TEST01 -g TEST --image redhat:rhel-byos:rhel-lvm91-gen2:latest --admin-username=azureuser --admin-password="Password123."
      
 Now let's take a look at the VM we just created from the latest RHEL8 LVM gold image with -d (--show-details):
 
