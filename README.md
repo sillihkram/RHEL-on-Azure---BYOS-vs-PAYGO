@@ -33,6 +33,10 @@ Install azure-cli software package
 
      sudo dnf install -y azure-cli
 
+ [MacOS]
+
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     brew install azure-cli
 
 Cloud Access Enrollment Process
 ------------
